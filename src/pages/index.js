@@ -26,7 +26,7 @@ export default function Home() {
       <div className='container px-4 py-5'>
         <div className='row flex-lg-row-reverse align-items-center py-5 g-5'>
           <div className='col-10 col-sm-8 col-lg-6'>
-            <img src='https://images.unsplash.com/photo-1520694478166-daaaaec95b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlc3NvYXMlMjBmZWxpemVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' className='d-block mx-lg-auto mg-fluid' width="700" height="500"/>
+            <img src='https://images.unsplash.com/photo-1520694478166-daaaaec95b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlc3NvYXMlMjBmZWxpemVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' className='d-block mx-lg-auto mg-fluid' width="610" height="500"/>
           </div>
           <div className='col-lg-6'>
           <h1 className='display-5 fw-bold text-body-emphasis lh-1 mb-3'>Donate Crypto</h1>
