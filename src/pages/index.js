@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import Footer from '@/components/Footer'
 import { doLogin } from '@/services/Web3Service'
 
@@ -25,22 +26,46 @@ export default function Home() {
       </Head>
       <div className='container px-4 py-5'>
         <div className='row flex-lg-row-reverse align-items-center py-5 g-5'>
-          <div className='col-10 col-sm-8 col-lg-6'>
-            <img src='https://images.unsplash.com/photo-1520694478166-daaaaec95b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlc3NvYXMlMjBmZWxpemVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' className='d-block mx-lg-auto mg-fluid' width="610" height="500"/>
-            Foto: Husna Miskandar
-          </div>
+
+        {
+          !wallet
+          ? (
+            <div className='col-10 col-sm-8 col-lg-6'>
+              <img src='https://images.unsplash.com/photo-1520694478166-daaaaec95b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlc3NvYXMlMjBmZWxpemVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' className='d-block mx-lg-auto mg-fluid' width="610" height="500"/>
+              Foto: Husna Miskandar
+            </div>
+          )
+          : (
+            <div className='col-10 col-sm-8 col-lg-6'>
+              <p className='mb-3'>Seja bem vinho {wallet}</p>  
+              <p className='mb-3'>O que voçê deseja fazer?</p>  
+              <div className='col-12'>
+                <p><Link href="/donate" className='btn btn-primary col-6 p-3'>Quero fazer uma doação</Link></p>
+                <p><Link href="/create" className='btn btn-secondary col-6 p-3'>Quero criar uma campanha</Link></p>
+              </div>
+            </div>
+          )
+        }
+
           <div className='col-lg-6'>
           <h1 className='display-5 fw-bold text-body-emphasis lh-1 mb-3'>Donate Crypto</h1>
           <p className='lead'>Sua plataforma descentralizada de doações.</p>
           <p className='lead mb-3'>Autentique-se com sua carteira, crie sua campanha ou doe para campanhas existentes!</p>
-          <div className='d-grid gep-2 d-md-flex justify-content-md-start'>
-            <button type='button' className='btn btn-primary btn-px-4 me-md-2' onClick={btnLoginClick}>
-              <img src="/metamask.svg" width="64" className='me-3'/>
-              Conectar com a MetaMask
-            </button>
-            {wallet}
-            {error}
-          </div>
+          
+          {
+            !wallet
+            ? (
+              <div className='d-grid gep-2 d-md-flex justify-content-md-start'>
+                <button type='button' className='btn btn-primary btn-px-4 me-md-2' onClick={btnLoginClick}>
+                  <img src="/metamask.svg" width="64" className='me-3'/>
+                  Conectar com a MetaMask
+                </button>
+                {error}
+              </div>
+            )
+            : <></>
+          }
+
           </div>
         </div>
         <Footer />
