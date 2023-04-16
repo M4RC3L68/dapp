@@ -2,7 +2,7 @@ import Head from "next/head"
 import Link from "next/link"
 import Footer from "@/components/Footer"
 import { useState } from "react"
-import { addCampaign } from "../services/Web3Service"
+import { addCampaign, getLastCampaignId } from "../services/Web3Service"
 
 export default function Create(){
 
@@ -14,9 +14,10 @@ export default function Create(){
   }
 
   function btnSaveClick(){
-    setMessage("Salvando...Aguard...")
+    setMessage("Salvando...Aguarde...")
     addCampaign(campaign)
-      .then(tx => setMessage(JSON.stringify(tx)))
+      .then(tx => getLastCampaignId())
+      .then(id => setMessage(`Campanha salva com ID <b>${id}</b>. Avise seus amigos e passe a eles esse número.`))
       .catch(err => {
         console.error(err)
         setMessage(err.message)
