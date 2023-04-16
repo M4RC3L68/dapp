@@ -70,23 +70,24 @@ export default function Donate() {
                   <div className="col-7">
                     {
                       campaign.videoUrl
-                      ? <iframe width="100%" height="480" src={campaign.videoUrl}></iframe>
+                      ? <iframe width="100%" height="480" src={campaign.videoUrl}></iframe>  
                       : <img src={campaign.imageUrl} className="d-block mx-lg-auto img-fluid" width="640" height="480"></img>
                     }
                   </div>
                   <div className="col-5 mb-5" style={{height: 480, scrollbars: true}}>
                      <h2>{campaign.title}</h2> 
-                     <p><strong>Author:</strong>{campaign.author}</p>
+                     <p><strong>Author: </strong>{campaign.author}</p>
                      <p className="mb-3">{campaign.description}</p>
                      {
                       campaign.videoUrl
-                      ? <p>Assista o vídeo ao lado para entender mais sobre nossa campanha</p>
+                      ? <p>Assista o vídeo ao lado para entender mais sobre nossa campanha  &gt;&gt;&gt; </p>
                       : <></>
                      }
                      <p className="mb-3 fst-italic mt-5">E aí, o que achou do projeto? Já foi arrecadado {campaign.balance / 10 ** 18} BNB nesta campanha. O quanto você quer doar (em BNB)</p>
                      <div className="mb-3">
                       <div className="input-group">
                         <input type="number" id="donation" className="form-control" onChange={onChangeValue} value={donation}/>
+                        <input type="button" value="Doar" className="btn btn-primary p-3 w-25" onClick={btnDonationClick}/>
                       </div>
                      </div>
                   </div>
