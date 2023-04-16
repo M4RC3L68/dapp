@@ -33,7 +33,7 @@ export default function Create(){
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="container">
-        <h1 className='display-5 fw-bold text-body-emphasis lh-1 mb-3'>Donate Crypto</h1>
+        <h1 className='display-5 fw-bold text-body-emphasis lh-1 mb-3 mt-5'>Donate Crypto</h1>
         <p>Preencha os campos para incluir sua campanha na plataforma.</p>
         <hr className="mb-4" />
         <div className="col-6">
