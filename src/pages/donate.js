@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Link from "next/link"
 import Footer from "@/components/Footer"
 import { useState } from "react"
 import { getCampaign, donate } from "../services/Web3Service"
