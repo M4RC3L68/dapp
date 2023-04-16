@@ -46,12 +46,12 @@ export default function Create(){
             <label for="description">Descrição:</label>
           </div>
           <div className="form-floating mb-3">
-            <input type="text" id="imageUrl" className="form-control" value={campaign.imageUrl} onChange={onInputChange} />
-            <label for="imageUrl">URL da Imagem:</label>
-          </div>
-          <div className="form-floating mb-3">
             <input type="text" id="videoUrl" className="form-control" value={campaign.videoUrl} onChange={onInputChange} />
             <label for="videoUrl">URL do Vídeo:</label>
+          </div>
+          <div className="form-floating mb-3">
+            <input type="text" id="imageUrl" className="form-control" value={campaign.imageUrl} onChange={onInputChange} />
+            <label for="imageUrl">URL da Imagem:</label>
           </div>
         </div>
         <div className="col-6 mb-3">
