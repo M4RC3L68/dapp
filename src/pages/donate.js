@@ -4,7 +4,7 @@ import Footer from "@/components/Footer"
 import { useState } from "react"
 import { getCampaign, donate } from "../services/Web3Service"
 
-export default function Donate(){
+export default function Donate() {
 
   const [campaign, setCampaign] = useState({})
   const [donation, setDonation] = useState(0)
@@ -14,7 +14,7 @@ export default function Donate(){
     campaign.id = evt.target.value
   }
 
-  function btnSearchClick(){
+  function btnSearchClick() {
     setMessage("Buscando...Aguarde...")
     getCampaign(campaign.id)
       .then(result => {
@@ -25,12 +25,12 @@ export default function Donate(){
       .catch(err => setMessage(err.message))
   }
 
-  function onChangeValue(evt){
+  function onChangeValue(evt) {
     setDonation(evt.target.value)
   }
 
-  function btnDonationClick(){
-    setMessage("Doando...aguard...")
+  function btnDonationClick() {
+    setMessage("Doando...aguarde...")
     donate(campaign.id, donation)
      .then(tx => setMessage(`Doação realizada, obrigado. Em alguns minutos o saldo será atualizado.`))
      .catch(err => setMessage(err.message))
